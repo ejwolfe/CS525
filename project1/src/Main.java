@@ -17,25 +17,25 @@ public class Main {
         new MarkovChain(1000, "test6.csv");
         // Experiment 3
         System.out.print("-");
-        new MarkovChain(100, "test7.csv");
+        new MarkovChain(1000, "test7.csv");
         System.out.print("-");
-        new MarkovChain(100, "test8.csv");
+        new MarkovChain(1000, "test8.csv");
         System.out.print("-");
-        new MarkovChain(100, "test9.csv");
+        new MarkovChain(1000, "test9.csv");
         System.out.print("-");
-        new MarkovChain(100, "test10.csv");
+        new MarkovChain(1000, "test10.csv");
         System.out.print("-");
-        new MarkovChain(100, "test11.csv");
+        new MarkovChain(1000, "test11.csv");
         System.out.print("-");
-        new MarkovChain(100, "test12.csv");
+        new MarkovChain(1000, "test12.csv");
         System.out.print("-");
-        new MarkovChain(100, "test13.csv");
+        new MarkovChain(1000, "test13.csv");
         System.out.print("-");
-        new MarkovChain(100, "test14.csv");
+        new MarkovChain(1000, "test14.csv");
         System.out.print("-");
-        new MarkovChain(100, "test15.csv");
+        new MarkovChain(1000, "test15.csv");
         System.out.print("-");
-        new MarkovChain(100, "test16.csv");
+        new MarkovChain(1000, "test16.csv");
         System.out.print("-:\n Finished tests");
     }
 

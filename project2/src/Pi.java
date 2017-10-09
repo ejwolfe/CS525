@@ -17,7 +17,7 @@ public class Pi {
             double x = random.nextDouble();
             double y = random.nextDouble();
             result = calculateCircle(x, y);
-            if (result < 1.0){
+            if (result <= 1.0){
                 numberOfSuccesses++;
             }
         }

@@ -44,20 +44,25 @@ public class MarkovChain {
         double[] yArray = new double[numberOfSteps];
         double[] oArray = new double[numberOfSteps];
         double[] rArray = new double[numberOfSteps];
+        String[] stepArray = new String[numberOfSteps];
         for(int i = 0; i < numberOfSteps; i++, totalWalks++){
             startPosition = walk(startPosition);
             switch (startPosition){
                 case 0:
                     gCount++;
+                    stepArray[i] = "G";
                     break;
                 case 1:
                     yCount++;
+                    stepArray[i] = "Y";
                     break;
                 case 2:
                     oCount++;
+                    stepArray[i] = "O";
                     break;
                 case 3:
                     rCount++;
+                    stepArray[i] = "R";
                     break;
             }
             gArray[i] = gCount / totalWalks;
@@ -65,7 +70,7 @@ public class MarkovChain {
             oArray[i] = oCount / totalWalks;
             rArray[i] = rCount / totalWalks;
         }
-        printToCSV(gArray, yArray, oArray, rArray);
+        printToCSV(gArray, yArray, oArray, rArray, stepArray);
     }
 
     /*
@@ -102,11 +107,11 @@ public class MarkovChain {
     /*
     * Function for printing the results of the walk to a csv file
      */
-    private void printToCSV(double[] array0, double[] array1, double[] array2, double[] array3){
+    private void printToCSV(double[] array0, double[] array1, double[] array2, double[] array3, String[] array4){
         try {
             FileWriter fileWriter = new FileWriter(fileName);
             PrintWriter printWriter = new PrintWriter(fileWriter);
-            for (int i = 0; i < 4; i++) {
+            for (int i = 0; i < 5; i++) {
                 for (int j = 0; j < array0.length; j++) {
                     switch (i){
                         case 0:
@@ -121,6 +126,8 @@ public class MarkovChain {
                         case 3:
                             printWriter.printf("%.2f,", array3[j]);
                             break;
+                        case 4:
+                            printWriter.printf("%s,", array4[j]);
                     }
                 }
                 printWriter.println();

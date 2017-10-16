@@ -44,9 +44,10 @@ public class MarkovChain {
         double[] yArray = new double[numberOfSteps];
         double[] oArray = new double[numberOfSteps];
         double[] rArray = new double[numberOfSteps];
+        Random random = new Random();
         String[] stepArray = new String[numberOfSteps];
         for(int i = 0; i < numberOfSteps; i++, totalWalks++){
-            startPosition = walk(startPosition);
+            startPosition = walk(startPosition, random);
             switch (startPosition){
                 case 0:
                     gCount++;
@@ -76,11 +77,10 @@ public class MarkovChain {
     /*
     * Function for deciding where the next walk will be
      */
-    private int walk(int currentState){
+    private int walk(int currentState, Random random){
         // Variable for return
         int nextState = 0;
         // Random number from figuring out where to walk to next
-        Random random = new Random();
         double nextProbability = random.nextDouble();
         // Switch case values
         double case0 = transitionMatrix[currentState][0];
